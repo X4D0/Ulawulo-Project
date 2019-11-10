@@ -1,11 +1,39 @@
 import java.util.*;
 public class Programmer extends Person{
-    private List<Project> listProject;
-    private List<Task> listTask;
-    private int idProgrammer;
-    private String nameProgrammer;
+    private static Task[] listTask;
+    private static int idProgrammer;
+    private static String nameProgrammer;
+    private static int numTask = 0;
+    private static int maxTask;
+
+    public static Task getTask(int x){
+        return listTask[x];
+    }
+
+    public void addTask(Task listTask){
+        if(numTask < maxTask){
+            this.listTask[numTask] = listTask;
+            numTask++;
+        }
+    }
+
+    public static int getNumTask() {
+        return numTask;
+    }
+
+    public void setNumTask(int numTask) {
+        this.numTask = numTask;
+    }
+
+    public static int getMaxTask() {
+        return maxTask;
+    }
+
+    public void setMaxTask(int maxTask) {
+        this.maxTask = maxTask;
+    }
     
-    public String getNameProgrammer() {
+    public static String getNameProgrammer() {
         return nameProgrammer;
     }
 
@@ -13,7 +41,7 @@ public class Programmer extends Person{
         this.nameProgrammer = nameProgrammer;
     }
 
-    public int getIdProgrammer() {
+    public static int getIdProgrammer() {
         return idProgrammer;
     }
 
@@ -21,9 +49,21 @@ public class Programmer extends Person{
         this.idProgrammer = idProgrammer;
     }
     
-   
-    public Programmer(int idProgrammer, String nameProgrammer) {
+    public Programmer(int idProgrammer, String nameProgrammer, int maxTask) {
         setIdProgrammer(idProgrammer);
         setNameProgrammer(nameProgrammer);
+        listTask = new Task[maxTask];
+        this.maxTask = maxTask;
     }
+    
+    public static void display(){
+        System.out.println("====================PROGRAMMER=======================");
+        System.out.println("Nama Programmer : "+getNameProgrammer());
+        System.out.println("ID Programmer : "+getIdProgrammer());
+        System.out.println("Tugas : ");
+        for(int i = 0; i<getNumTask(); i++){
+            System.out.println("\t"+(i+1)+". "+getTask(i).getDescTask());
+        }
+    }
+    
 }

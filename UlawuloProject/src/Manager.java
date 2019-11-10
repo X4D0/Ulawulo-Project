@@ -1,8 +1,8 @@
 public class Manager extends Person {
-    private int idManager;
-    private String nameManager;
-    private String divisi;
-    private String phoneManager;
+    private static int idManager;
+    private static String nameManager;
+    private static String divisi;
+    private static String phoneManager;
 
     public Manager(int idManager, String nameManager, String divisi, String phoneManager) {
         setIdManager(idManager);
@@ -11,7 +11,7 @@ public class Manager extends Person {
         setPhoneManager(phoneManager);
     }
     
-    public int getIdManager(){
+    public static int getIdManager(){
         return idManager;
     }
     
@@ -19,7 +19,7 @@ public class Manager extends Person {
         this.idManager = idManager;
     }
 
-    public String getNameManager() {
+    public static String getNameManager() {
         return nameManager;
     }
 
@@ -27,7 +27,7 @@ public class Manager extends Person {
         this.nameManager = nameManager;
     }
 
-    public String getDivisi() {
+    public static String getDivisi() {
         return divisi;
     }
 
@@ -35,7 +35,7 @@ public class Manager extends Person {
         this.divisi = divisi;
     }
 
-    public String getPhoneManager() {
+    public static String getPhoneManager() {
         return phoneManager;
     }
 
@@ -43,5 +43,11 @@ public class Manager extends Person {
         this.phoneManager = phoneManager;
     }
     
-    
+    public static void display(){
+        System.out.println("====================MANAGER PROJECT=======================");
+        System.out.println("Nama Manager : "+getNameManager());
+        System.out.println("ID Manager   : "+getIdManager());
+        System.out.println("Nomor Telpon : "+getPhoneManager());
+        System.out.println("Divisi       : "+getDivisi());
+    }
 }

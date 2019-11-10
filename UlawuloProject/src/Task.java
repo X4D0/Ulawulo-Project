@@ -1,19 +1,18 @@
 
 public class Task {
-    private String nameProject;
+    private String descTask;
     private int maxTugas;
     
-    public Task(String nameProject, int maxTugas){
-        setNameProject(nameProject);
-        setMaxTugas(maxTugas);
+    public Task(String descTask){
+        setDescTask(descTask);
     }
 
-    public String getNameProject() {
-        return nameProject;
+    public String getDescTask() {
+        return descTask;
     }
 
-    public void setNameProject(String nameProject) {
-        this.nameProject = nameProject;
+    public void setDescTask(String DescTask) {
+        this.descTask = DescTask;
     }
 
     public int getMaxTugas() {

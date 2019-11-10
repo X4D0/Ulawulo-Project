@@ -15,10 +15,6 @@ public class Project {
        
     }
     
-    public void createTugas(String nameProject, int maxTugas){
-        Task task = new Task(nameProject, maxTugas);
-    }
-    
     public Manager getManager() {
         return manager;
     }
@@ -51,14 +47,17 @@ public class Project {
         this.maxProgrammer = maxProgrammer;
     }
     
-    public void addTask(Programmer programmer, String task){
-        
-    }
-    
     public void addProgrammer(Programmer programmer){
         if(numProgrammer < maxProgrammer){
             this.listProgrammer[numProgrammer] = programmer;
             numProgrammer++;
         }
     }
+    
+    public void display(){
+        System.out.println("==========PROJECT : "+getNameProject()+"==========");
+        Manager.display();
+        Programmer.display();
+    }
+    
 }
