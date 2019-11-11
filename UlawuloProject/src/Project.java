@@ -3,7 +3,6 @@ public class Project {
     Manager manager;
     private String nameProject;
     private Programmer[] listProgrammer;
-    private Task[] listTask;
     private int numProgrammer = 0;
     private int maxProgrammer;
 
@@ -55,9 +54,12 @@ public class Project {
     }
     
     public void display(){
-        System.out.println("==========PROJECT : "+getNameProject()+"==========");
-        Manager.display();
-        Programmer.display();
+        System.out.println("========= PROJECT : "+getNameProject()+" =========");
+        getManager().display();
+        for (int i = 0; i < getNumProgrammer(); i++) {
+            listProgrammer[i].display();
+        }
+
     }
     
 }

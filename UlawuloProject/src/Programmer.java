@@ -1,12 +1,12 @@
 import java.util.*;
 public class Programmer extends Person{
-    private static Task[] listTask;
-    private static int idProgrammer;
-    private static String nameProgrammer;
-    private static int numTask = 0;
-    private static int maxTask;
+    private Task[] listTask;
+    private int idProgrammer;
+    private String nameProgrammer;
+    private int numTask = 0;
+    private int maxTask;
 
-    public static Task getTask(int x){
+    public Task getTask(int x){
         return listTask[x];
     }
 
@@ -17,7 +17,7 @@ public class Programmer extends Person{
         }
     }
 
-    public static int getNumTask() {
+    public int getNumTask() {
         return numTask;
     }
 
@@ -25,7 +25,7 @@ public class Programmer extends Person{
         this.numTask = numTask;
     }
 
-    public static int getMaxTask() {
+    public int getMaxTask() {
         return maxTask;
     }
 
@@ -33,7 +33,7 @@ public class Programmer extends Person{
         this.maxTask = maxTask;
     }
     
-    public static String getNameProgrammer() {
+    public String getNameProgrammer() {
         return nameProgrammer;
     }
 
@@ -41,7 +41,7 @@ public class Programmer extends Person{
         this.nameProgrammer = nameProgrammer;
     }
 
-    public static int getIdProgrammer() {
+    public int getIdProgrammer() {
         return idProgrammer;
     }
 
@@ -56,8 +56,8 @@ public class Programmer extends Person{
         this.maxTask = maxTask;
     }
     
-    public static void display(){
-        System.out.println("====================PROGRAMMER=======================");
+    public void display(){
+        System.out.println("\n\t<<<<PROGRAMMER>>>>");
         System.out.println("Nama Programmer : "+getNameProgrammer());
         System.out.println("ID Programmer : "+getIdProgrammer());
         System.out.println("Tugas : ");
