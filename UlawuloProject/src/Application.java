@@ -1,5 +1,8 @@
 import java.util.*;
 public class Application {
+    public void editProgrammer(){
+        
+    }
     public static void main(String[] args) {
 //        List<Manager> Manager = new ArrayList<>();
 //        List<Programmer> Programmer = new ArrayList<>();

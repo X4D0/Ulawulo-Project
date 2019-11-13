@@ -1,10 +1,12 @@
 import java.util.*;
 public class Project {
-    Manager manager;
+    private Manager manager;
     private String nameProject;
     private Programmer[] listProgrammer;
     private int numProgrammer = 0;
     private int maxProgrammer;
+    private Task[] listTask;
+    private int numTask = 0;
 
     public Project(Manager manager, String nameProject, int maxProgrammer) {
         setManager(manager);
@@ -50,6 +52,13 @@ public class Project {
         if(numProgrammer < maxProgrammer){
             this.listProgrammer[numProgrammer] = programmer;
             numProgrammer++;
+        }
+    }
+    
+    public void createTask(Task t){
+        if(numTask < maxProgrammer){
+            this.listTask[numTask] = t;
+            numTask++;
         }
     }
     
