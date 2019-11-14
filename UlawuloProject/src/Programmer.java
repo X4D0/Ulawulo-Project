@@ -1,7 +1,7 @@
 import java.util.*;
 public class Programmer extends Person{
     private Task[] listTask;
-    private int idProgrammer;
+    private String idProgrammer;
     private String nameProgrammer;
     private int numTask = 0;
     private int maxTask;
@@ -41,15 +41,15 @@ public class Programmer extends Person{
         this.nameProgrammer = nameProgrammer;
     }
 
-    public int getIdProgrammer() {
+    public String getIdProgrammer() {
         return idProgrammer;
     }
 
-    public void setIdProgrammer(int idProgrammer) {
+    public void setIdProgrammer(String idProgrammer) {
         this.idProgrammer = idProgrammer;
     }
     
-    public Programmer(int idProgrammer, String nameProgrammer, int maxTask) {
+    public Programmer(String idProgrammer, String nameProgrammer, int maxTask) {
         setIdProgrammer(idProgrammer);
         setNameProgrammer(nameProgrammer);
         listTask = new Task[maxTask];
