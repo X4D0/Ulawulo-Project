@@ -10,12 +10,19 @@ import java.util.*;
  */
 public class Client {
     private Project[] daftarProject;
+    private Date deadline;
 
     public Client(Project[] daftarProject) {
         this.daftarProject = daftarProject;
     }
     
-//    public void creteProject(date deadline){
-//        
-//    }
+    public void creteProject(Date deadline){
+        this.deadline = deadline;
+    }
+
+    public Date getDeadline() {
+        return deadline;
+    }
+    
+    
 }

@@ -4,14 +4,16 @@ public class Application {
     List<Programmer> Programmer = new ArrayList<>();
     
     public void inputProgrammer(Programmer p){
-        
+        Programmer.add(p);
+    }
+
+    public Programmer getProgrammer(int id) {
+        return Programmer.get(id);
     }
     
-    public void editProgrammer(Programmer idProgrammer){
-        
+    public void editProgrammer(int id){
+        this.Programmer.set(id, getProgrammer(Programmer.size()));
+        Programmer.remove(Programmer.size());
     }
     
-//    public Programmer getProgrammer(Programmer idProgrammer){
-//        
-//    }
 }
