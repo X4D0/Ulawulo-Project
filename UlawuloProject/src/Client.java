@@ -9,15 +9,26 @@ import java.util.*;
  * @author Rizal MF
  */
 public class Client {
-    private Project[] daftarProject;
+    private String nameClient;
+    private List<Project> daftarProject;
     private Date deadline;
 
-    public Client(Project[] daftarProject) {
-        this.daftarProject = daftarProject;
+    public Client(String nameClient) {
+        setNameClient(nameClient);
+        this.daftarProject = new ArrayList<>();
     }
     
-    public void creteProject(Date deadline){
-        this.deadline = deadline;
+    public String getNameClient(){
+        return nameClient;
+    }
+    
+    public void setNameClient(String nameClient){
+        this.nameClient = nameClient;
+    }
+    
+    public void addProject(String nameProject, int maks,String deadline){
+        Project project = new Project(nameProject, maks,deadline);
+        daftarProject.add(project);
     }
 
     public Date getDeadline() {

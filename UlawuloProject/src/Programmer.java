@@ -5,6 +5,7 @@ public class Programmer extends Person{
     private String nameProgrammer;
     private int numTask = 0;
     private int maxTask;
+    private static int proId = 1;
 
     public Task getTask(int x){
         return listTask[x];
@@ -42,16 +43,16 @@ public class Programmer extends Person{
     }
 
     public String getIdProgrammer() {
-        return idProgrammer;
+        return super.getId();
     }
 
     public void setIdProgrammer(String idProgrammer) {
         this.idProgrammer = idProgrammer;
     }
     
-    public Programmer(String idProgrammer, String nameProgrammer, int maxTask) {
-        setIdProgrammer(idProgrammer);
-        setNameProgrammer(nameProgrammer);
+    public Programmer(String nameProgrammer, int maxTask) {
+        super(nameProgrammer,"Programmer-"+proId);
+        proId++;
         listTask = new Task[maxTask];
         this.maxTask = maxTask;
     }

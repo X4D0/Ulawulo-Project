@@ -3,16 +3,17 @@ public class Manager extends Person {
     private String nameManager;
     private String divisi;
     private String phoneManager;
+    private static int mId = 1;
 
-    public Manager(int idManager, String nameManager, String divisi, String phoneManager) {
-        setIdManager(idManager);
-        setNameManager(nameManager);
+    public Manager(String nameManager, String divisi, String phoneManager) {
+        super(nameManager, "Manager-"+mId);
+        mId++;
         setDivisi(divisi);
         setPhoneManager(phoneManager);
     }
     
-    public int getIdManager(){
-        return idManager;
+    public String getIdManager(){
+        return super.getId();
     }
     
     public void setIdManager(int idManager){
