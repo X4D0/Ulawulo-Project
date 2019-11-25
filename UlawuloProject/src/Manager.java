@@ -21,7 +21,7 @@ public class Manager extends Person {
     }
 
     public String getNameManager() {
-        return nameManager;
+        return super.getName();
     }
 
     public void setNameManager(String nameManager) {

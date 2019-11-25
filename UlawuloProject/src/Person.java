@@ -1,17 +1,17 @@
 public abstract class Person {
-    private String nama;
-    private String id;
+    private static String nama;
+    private static String id;
     
     public Person(String nama, String id){
         this.nama = nama;
         this.id = id;
     }
 
-    public String getNama() {
+    public static String getName() {
         return nama;
     }
 
-    public void setNama(String nama) {
+    public void setName(String nama) {
         this.nama = nama;
     }
 

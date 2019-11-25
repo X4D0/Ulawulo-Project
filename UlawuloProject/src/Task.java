@@ -1,12 +1,14 @@
+import java.util.*;
 
 public class Task {
     private String descTask;
-    private int maxTugas;
-    private Programmer pelaksana;
+    private List<Programmer> listPelaksana;
     private String status;
     
-    public Task(String descTask){
+    public Task(String descTask,String status){
         setDescTask(descTask);
+        listPelaksana = new ArrayList<>();
+        setStatus(status);
     }
 
     public String getDescTask() {
@@ -17,26 +19,16 @@ public class Task {
         this.descTask = DescTask;
     }
 
-    public int getMaxTugas() {
-        return maxTugas;
-    }
-
-    public void setMaxTugas(int maxTugas) {
-        this.maxTugas = maxTugas;
-    }
-
     public String getStatus() {
         return status;
     }
     
-    public void setStatus(){
+    public void setStatus(String status){
         if (status == "done") this.status = status;
         else this.status = "not done yet";
     }
     
-    public void setPelaksana(Programmer pelaksana) {
-        this.pelaksana = pelaksana;
+    public void addPelaksana(Programmer programmer){
+        listPelaksana.add(programmer);
     }
-    
-    
 }

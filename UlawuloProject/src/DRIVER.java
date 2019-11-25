@@ -14,34 +14,6 @@ import java.util.List;
  */
 public class DRIVER {
     public static void main(String[] args) {
-//        List<Manager> Manager = new ArrayList<>();
-//        List<Programmer> Programmer = new ArrayList<>();
-//        List<Project> Project = new ArrayList<>();
-        List<Project> Client = new ArrayList<>();
-//               
-//        Manager m1 = new Manager(001,"Udin Sedunia","Product Development","087751123");
-//        
-//        Project project = new Project(m1,"Building Tubes",5);
-//        
-//        Programmer p1 = new Programmer("4233","Ray",4);
-//        Programmer p2 = new Programmer("0150","Riz",4);
-//        Task t1 = new Task("Membuat Class");
-//        Task t2 = new Task("Membuat Driver");
-//        p1.addTask(t1);
-//        p2.addTask(t2);
-//        
-//        
-//        project.addProgrammer(p1);
-//        project.addProgrammer(p2);
-//        
-//        Client.add(0,project);
-//        
-//        Project p;
-//        for (int i = 0; i < proyek.size(); i++) {
-//                p = (Project)proyek.get(i);
-//                p.display();
-//        }
-        
         Application mulai = new Application();
         Scanner choice = new Scanner(System.in);
         Scanner input = new Scanner (System.in);
@@ -65,13 +37,15 @@ public class DRIVER {
             pilih = choice.nextInt();
             switch (pilih) {
                 case 1: {
+                    System.out.println("Client : Bro");
+                    String c1 = "Bro";
                     System.out.println("Nama Project : Proyek1");
                     String np = "Proyek1";
                     System.out.println("Masukkan TGL Deadline : 10 November 2019");
                     String dl = "10 November 2019";
                     System.out.println("Jumlah Maks. Programmer : 4");
                     int maks = 4;
-                    mulai.addProject(np,maks,dl);
+                    mulai.addProject(c1,np,maks,dl);
                     String x = input.next();
                     break;
                     }
@@ -101,6 +75,7 @@ public class DRIVER {
                     System.out.println("Nomor Handphone : 08123213");
                     String nope = "08123123";
                     mulai.addManager(nm,div,nope);
+                    mulai.insertManager(mulai.searchManager("Manager-1"), mulai.searchProject("Proyek1"));
                     String x = input.next();
                     break;
                 }
@@ -128,6 +103,7 @@ public class DRIVER {
                     System.out.println("Max Task : 3");
                     int max = 3;
                     mulai.addProgrammer(np,max);
+                    mulai.insertProgrammer(mulai.searchProgrammer("Programmer-1"),mulai.searchProject("Proyek1"));
                     String x = input.next();
                     break;
                 }

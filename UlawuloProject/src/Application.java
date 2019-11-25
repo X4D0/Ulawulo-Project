@@ -4,7 +4,8 @@ public class Application {
     private List<Programmer> Programmer = new ArrayList<>();
     private List<Person> Person = new ArrayList<>();
     private List<Client> Client = new ArrayList<>();
-    private List<Project> Project = new ArrayList<>();
+    //private List<Project> Project = new ArrayList<>();
+    //kudu dihapus
     
     /* SEARCH */
     public Programmer searchProgrammer(String id){
@@ -85,7 +86,7 @@ public class Application {
         if(searchClient(nameClient)==null){
             System.out.println("Client not Found");
         }else{
-            searchClient(nameClient).getNameClient();
+            searchClient(nameClient).display();
         }
     }
     
@@ -107,9 +108,14 @@ public class Application {
         Person.add(m);
     }
     
-    public void addProject(String nameProject, int maxProgrammer, String deadline){
-        Project proyek = new Project(nameProject,maxProgrammer,deadline);
-        Project.add(proyek);
+    //insert
+    
+    public void insertProject(Client c,Project p){
+        Client c1 = searchClient(c.getNameClient());
+        Project p1 = searchProject(p.getNameProject());
+        if(c1 != null && p1 != null){
+            c1.addProject(p1);
+        }
     }
     
     public void insertProgrammer(Programmer p, Project proyek){
@@ -128,17 +134,19 @@ public class Application {
         }
     }
     
+    public void insertClient (Client c, Project proyek){
+        Client c1 = searchClient(c.getNameClient());
+        Project project = searchProject(proyek.getNameProject());
+        if(c1 != null && project != null){
+            project.setClient(c1);
+        }
+    }
+    
     /* DELETE */
     public void deleteProgrammer(String id) {
         Programmer p1 = searchProgrammer(id);
         if (p1 != null) {
             Programmer.remove(p1);
-//            for (int i = 0; i < Project.size(); i++) {
-//                if (Project.get(i).getProgrammer() == p1) {
-//                    MataPelajaran m2 = new MataPelajaran("KOSONG", 0, 0);
-//                    daftarKelas.get(i).addMapel(m2);
-//                }
-//            }
             System.out.println("Programmer Deleted");
         } else {
             System.out.println("Programmer not Found");
