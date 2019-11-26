@@ -12,6 +12,10 @@ public class Project {
         this.listProgrammer = new ArrayList<>();
         this.deadline = deadline;
     }
+
+    public void setDeadline(String deadline) {
+        this.deadline = deadline;
+    }
     
     public Manager getManager() {
         return manager;
@@ -32,6 +36,14 @@ public class Project {
     public void addProgrammer(Programmer programmer){
         listProgrammer.add(programmer);
     }
+
+    public Programmer getProgrammer(int x) {
+        return listProgrammer.get(x);
+    }
+    
+    public int sizeProgrammer(){
+        return listProgrammer.size();
+    }
     
     public void createTask(String tugas, String status){
         Task task = new Task(tugas,status);
@@ -40,6 +52,9 @@ public class Project {
     
     public Task getTask(int x){
         return listTask.get(x);
+    }
+    public int sizeTask(){
+        return listTask.size();
     }
     
     public Programmer searchProgrammer(String id){
@@ -70,4 +85,5 @@ public class Project {
         Task t1 = searchTask(tugas);
         listTask.remove(t1);
     }
+    
 }

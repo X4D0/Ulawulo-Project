@@ -14,118 +14,124 @@ import java.util.List;
  */
 public class DRIVER {
     public static void main(String[] args) {
-        Application mulai = new Application();
-        Scanner choice = new Scanner(System.in);
-        Scanner input = new Scanner (System.in);
+        Client c1 = new Client("Bro");
+        Manager m1 = new Manager("0150","Mining","085");
+        Programmer p1 = new Programmer("Rayhan");
         
-        int pilih = 1;
-        while (pilih != 0) {
-            System.out.println("\tProject Management");
-            System.out.println("1. Create Project");
-            System.out.println("2. Edit Project");
-            System.out.println("3. Show Project");
-            System.out.println("4. Delete Project");
-            System.out.println("5. Add Manager");
-            System.out.println("6. Edit Manager");
-            System.out.println("7. Show Manager");
-            System.out.println("8. Delete Manager");
-            System.out.println("9. Add Programmer");
-            System.out.println("10. Edit Programmer");
-            System.out.println("11. Show Programmer");
-            System.out.println("12. Delete Programmer");
-            System.out.print("Choice : ");
-            pilih = choice.nextInt();
-            switch (pilih) {
-                case 1: {
-                    System.out.println("Client : Bro");
-                    String c1 = "Bro";
-                    System.out.println("Nama Project : Proyek1");
-                    String np = "Proyek1";
-                    System.out.println("Masukkan TGL Deadline : 10 November 2019");
-                    String dl = "10 November 2019";
-                    System.out.println("Jumlah Maks. Programmer : 4");
-                    int maks = 4;
-                    mulai.addProject(c1,np,maks,dl);
-                    String x = input.next();
-                    break;
-                    }
-                case 2 : {
-                    break;
-                }
-                case 3 : {
-                    System.out.println("VIEW PROJECTS : ");
-                    for (int i = 0; i < mulai.getProjectSz(); i++) {
-                        mulai.viewProject(mulai.getProject(i).getNameProject());
-                    }
-                    String x = input.next();
-                    break;
-                }
-                case 4 : {
-                    System.out.println("Project yang ingin dihapus : Proyek1");
-                    String np = "Proyek1";
-                    mulai.deleteProject(np);
-                    String x = input.next();
-                    break;
-                }
-                case 5 : {
-                    System.out.println("Nama Manager : Asep Saepudin");
-                    String nm = "Asep Saepudin";
-                    System.out.println("Divisi : Mining");
-                    String div = "Mining";
-                    System.out.println("Nomor Handphone : 08123213");
-                    String nope = "08123123";
-                    mulai.addManager(nm,div,nope);
-                    mulai.insertManager(mulai.searchManager("Manager-1"), mulai.searchProject("Proyek1"));
-                    String x = input.next();
-                    break;
-                }
-                case 6 : {
-                    break;
-                }
-                case 7 : {
-                    System.out.println("VIEW MANAGERS : ");
-                    for (int i = 0; i < mulai.getManagerSz(); i++) {
-                        mulai.viewManager(mulai.getManager(i).getNameManager());
-                    }
-                    String x = input.next();
-                    break;
-                }
-                case 8 : {
-                    System.out.println("Manager yang ingin dihapus : Asep Saepudin");
-                    String np = "Asep Saepudin";
-                    mulai.deleteManager(np);
-                    String x = input.next();
-                    break;
-                }
-                case 9 : {
-                    System.out.println("Nama Programmer : Sehat Walafiat");
-                    String np = "Sehat Walafiat";
-                    System.out.println("Max Task : 3");
-                    int max = 3;
-                    mulai.addProgrammer(np,max);
-                    mulai.insertProgrammer(mulai.searchProgrammer("Programmer-1"),mulai.searchProject("Proyek1"));
-                    String x = input.next();
-                    break;
-                }
-                case 10 : {
-                    break;
-                }
-                case 11 : {
-                    System.out.println("VIEW PROGRAMMERS : ");
-                    for (int i = 0; i < mulai.getProgrammerSz(); i++) {
-                        mulai.viewProgrammer(mulai.getProgrammer(i).getNameProgrammer());
-                    }
-                    String x = input.next();
-                    break;
-                }
-                case 12 : {
-                    System.out.println("Programmer yang ingin dihapus : Sehat Walafiat");
-                    String np = "Sehat Walafiat";
-                    mulai.deleteProgrammer(np);
-                    String x = input.next();
-                    break;
-                }
-            }            
-        }
+        System.out.println("Nama Client : "+getNameClient());
+        System.out.println("id Manager : "+getIdManager());
+//        Application mulai = new Application();
+//        Scanner choice = new Scanner(System.in);
+//        Scanner input = new Scanner (System.in);
+//        
+//        int pilih = 1;
+//        while (pilih != 0) {
+//            System.out.println("\tProject Management");
+//            System.out.println("1. Create Project");
+//            System.out.println("2. Edit Project");
+//            System.out.println("3. Show Project");
+//            System.out.println("4. Delete Project");
+//            System.out.println("5. Add Manager");
+//            System.out.println("6. Edit Manager");
+//            System.out.println("7. Show Manager");
+//            System.out.println("8. Delete Manager");
+//            System.out.println("9. Add Programmer");
+//            System.out.println("10. Edit Programmer");
+//            System.out.println("11. Show Programmer");
+//            System.out.println("12. Delete Programmer");
+//            System.out.print("Choice : ");
+//            pilih = choice.nextInt();
+//            switch (pilih) {
+//                case 1: {
+//                    System.out.println("Client : Bro");
+//                    String c1 = "Bro";
+//                    System.out.println("Nama Project : Proyek1");
+//                    String np = "Proyek1";
+//                    System.out.println("Masukkan TGL Deadline : 10 November 2019");
+//                    String dl = "10 November 2019";
+//                    System.out.println("Jumlah Maks. Programmer : 4");
+//                    int maks = 4;
+////                    mulai.addProject(c1,np,dl);
+//                    String x = input.next();
+//                    break;
+//                    }
+//                case 2 : {
+//                    break;
+//                }
+//                case 3 : {
+//                    System.out.println("VIEW PROJECTS : ");
+//                    for (int i = 0; i < mulai.getProjectSz(); i++) {
+//                        mulai.viewProject(mulai.getProject(i).getNameProject());
+//                    }
+//                    String x = input.next();
+//                    break;
+//                }
+//                case 4 : {
+//                    System.out.println("Project yang ingin dihapus : Proyek1");
+//                    String np = "Proyek1";
+//                    mulai.deleteProject(np);
+//                    String x = input.next();
+//                    break;
+//                }
+//                case 5 : {
+//                    System.out.println("Nama Manager : Asep Saepudin");
+//                    String nm = "Asep Saepudin";
+//                    System.out.println("Divisi : Mining");
+//                    String div = "Mining";
+//                    System.out.println("Nomor Handphone : 08123213");
+//                    String nope = "08123123";
+//                    mulai.addManager(nm,div,nope);
+//                    mulai.insertManager(mulai.searchManager("Manager-1"), mulai.searchProject("Proyek1"));
+//                    String x = input.next();
+//                    break;
+//                }
+//                case 6 : {
+//                    break;
+//                }
+//                case 7 : {
+//                    System.out.println("VIEW MANAGERS : ");
+//                    for (int i = 0; i < mulai.getManagerSz(); i++) {
+//                        mulai.viewManager(mulai.getManager(i).getNameManager());
+//                    }
+//                    String x = input.next();
+//                    break;
+//                }
+//                case 8 : {
+//                    System.out.println("Manager yang ingin dihapus : Asep Saepudin");
+//                    String np = "Asep Saepudin";
+//                    mulai.deleteManager(np);
+//                    String x = input.next();
+//                    break;
+//                }
+//                case 9 : {
+//                    System.out.println("Nama Programmer : Sehat Walafiat");
+//                    String np = "Sehat Walafiat";
+//                    System.out.println("Max Task : 3");
+//                    int max = 3;
+//                    mulai.addProgrammer(np,max);
+//                    mulai.insertProgrammer(mulai.searchProgrammer("Programmer-1"),mulai.searchProject("Proyek1"));
+//                    String x = input.next();
+//                    break;
+//                }
+//                case 10 : {
+//                    break;
+//                }
+//                case 11 : {
+//                    System.out.println("VIEW PROGRAMMERS : ");
+//                    for (int i = 0; i < mulai.getProgrammerSz(); i++) {
+//                        mulai.viewProgrammer(mulai.getProgrammer(i).getNameProgrammer());
+//                    }
+//                    String x = input.next();
+//                    break;
+//                }
+//                case 12 : {
+//                    System.out.println("Programmer yang ingin dihapus : Sehat Walafiat");
+//                    String np = "Sehat Walafiat";
+//                    mulai.deleteProgrammer(np);
+//                    String x = input.next();
+//                    break;
+//                }
+//            }            
+//        }
     }
 }
