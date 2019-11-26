@@ -5,6 +5,7 @@ public class Application {
     private List<Person> Person = new ArrayList<>();
     private List<Client> Client = new ArrayList<>();
     private List<Project> Project = new ArrayList<>();
+    
     /* SEARCH */
     public Project searchProject(String nameProject){
         int i = 0;
@@ -52,7 +53,16 @@ public class Application {
     }
     
     /* VIEW */
+    
     public void viewProject(String nama){
+        if(searchProject(nama)==null){
+            System.out.println("Project not Found");
+        }else{
+            System.out.println("Nama Project : "+searchProject(nama).getNameProject());
+            System.out.println("==========================================================");
+        }
+    }
+    public void viewProjectFull(String nama){
         if(searchProject(nama)==null){
             System.out.println("Project not Found");
         }else{
@@ -66,22 +76,32 @@ public class Application {
             for (int i = 0; i < searchProject(nama).sizeProgrammer(); i++) {
                 System.out.println("\t\t- "+searchProject(nama).getProgrammer(i));
             }
+            System.out.println("==========================================================");
         }
     }
     
     public void viewProgrammer(String id){
-        if(searchProgrammer(id)==null){
+        Programmer p = searchProgrammer(id);
+        if(p==null){
             System.out.println("Programmer not Found");
         }else{
-            
+            System.out.println("ID Programmer : "+p.getIdProgrammer());
+            System.out.println("Nama : "+p.getNameProgrammer());
+            System.out.println("Tugas : "+p.getTask().getDescTask());
+            System.out.println("==========================================================");    
         }
     }
     
     public void viewManager(String id){
-        if(searchManager(id)==null){
+        Manager m = searchManager(id);
+        if(m==null){
             System.out.println("Manager not Found");
         }else{
-            searchManager(id).display();
+            System.out.println("ID Manager : "+m.getIdManager());
+            System.out.println("Nama : "+m.getNameManager());
+            System.out.println("Phone : "+m.getPhoneManager());
+            System.out.println("Divisi : "+m.getDivisi());
+            System.out.println("==========================================================");
         }
     }
     
@@ -89,7 +109,8 @@ public class Application {
         if(searchClient(nameClient)==null){
             System.out.println("Client not Found");
         }else{
-            searchClient(nameClient).getNameClient();
+            System.out.println("CLIENT : "+searchClient(nameClient).getNameClient());
+            System.out.println("==========================================================");
         }
     }
     
@@ -111,35 +132,20 @@ public class Application {
         Person.add(m);
     }
     
-    //insert
-    
-    public void insertProject(Client c,Project p){
-        Client c1 = searchClient(c.getNameClient());
-        Project p1 = searchProject(p.getNameProject());
-        if(c1 != null && p1 != null){
-            c1.listProject.add(p1);
-        }
+    public void inputClient(String nama){
+        Client c = new Client(nama);
+        Client.add(c);
     }
     
-    public void insertProgrammer(Programmer p, Project proyek){
-        Programmer p1 = searchProgrammer(p.getIdProgrammer());
-        Project project = searchProject(proyek.getNameProject());
-        if(p1 != null && project != null){
-            project.addProgrammer(p1);
-        }
+    public void inputProgrammer(String nama){
+        Programmer p1 = new Programmer(nama);
+        Programmer.add(p1);
+        Person.add(p1);
     }
-    
-    public void insertManager(Manager m, Project proyek){
-        Manager m1 = searchManager(m.getIdManager());
-        Project project = searchProject(proyek.getNameProject());
-        if(m1 != null && project != null){
-            project.setManager(m1);
-        }
-    }
-    
-    public void insertClient (String nameClient){
-        Client c1 = new Client(nameClient);
-        Client.add(c1);
+    public void inputManager(String nama, String divisi, String hp){
+        Manager m = new Manager(nama,divisi,hp);
+        Manager.add(m);
+        Person.add(m);
     }
     
     /* DELETE */
@@ -191,16 +197,9 @@ public class Application {
     public Programmer getProgrammer(int i){
         return Programmer.get(i);
     }
-    
-    
-//    public Project getProject(int i){
-//        return Project.get(i);
-//    }
-//    public void editProgrammer(int id){
-//        this.Programmer.set(id, getProgrammer(Programmer.size()));
-//        Programmer.remove(Programmer.size());
-//    }
-
+    public Project getProject(int i){
+        return Project.get(i);
+    }
     public Client getClient(int i) {
         return Client.get(i);
     }
@@ -263,5 +262,32 @@ public class Application {
         else {
             System.out.println("Client not Found");
         }
+    }
+    
+    /* toString */
+    public String toStringManager(String nama) {
+        if (searchManager(nama) == null) {
+            return "Manager not Found";
+        } else {
+            return "ID Manager : "+searchManager(nama).getIdManager()+"\nNama Manager\t: " + searchManager(nama).getNameManager() 
+                    + "\nDivisi\t: " + searchManager(nama).getDivisi() + "\nPhone \t: " + searchManager(nama).getPhoneManager();
+        }
+    }
+    
+    public String toStringProgrammer(String nama) {
+        if (searchProgrammer(nama) == null) {
+            return "Programmer not Found";
+        } else {
+            return "ID Programmer : "+searchProgrammer(nama).getIdProgrammer()+"\nNama Programmer\t: " + searchProgrammer(nama).getNameProgrammer() 
+                    + "\nTugas\t: " + searchProgrammer(nama).getTask().getDescTask();
+        }
+    }
+    
+    public String[] getProjectListId(){
+        String[] listId = new String[Project.size()];
+        for (int i = 0; i < Project.size(); i++) {
+            listId[i] = Project.get(i).getNameProject();
+        }
+        return listId;
     }
 }
