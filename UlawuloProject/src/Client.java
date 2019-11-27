@@ -39,8 +39,8 @@ public class Client {
         this.nameClient = nameClient;
     }
     
-    public void createProject(Manager m, String nameP, String deadline){
-        Project project = new Project(m,nameP,deadline);
+    public void createProject(String nameP, String deadline){
+        Project project = new Project(nameP,deadline);
         listProject.add(project);
     }
     

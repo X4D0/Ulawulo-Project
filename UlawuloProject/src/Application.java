@@ -5,6 +5,7 @@ public class Application {
     private List<Person> Person = new ArrayList<>();
     private List<Client> Client = new ArrayList<>();
     private List<Project> Project = new ArrayList<>();
+    private List<Task> Task = new ArrayList<>();
     
     /* SEARCH */
     public Project searchProject(String nameProject){
@@ -115,26 +116,14 @@ public class Application {
     }
     
     /* ADD */
-    public void addClient(String nameClient){
-        Client c = new Client(nameClient);
-        Client.add(c);
-    }
-    
-    public void addProgrammer(String nameProgrammer){
-        Programmer p = new Programmer(nameProgrammer);
-        Programmer.add(p);
-        Person.add(p);
-    }
-    
-    public void addManager(String nameManager, String divisi, String phone){
-        Manager m = new Manager(nameManager,divisi,phone);
-        Manager.add(m);
-        Person.add(m);
-    }
     
     public void inputClient(String nama){
         Client c = new Client(nama);
         Client.add(c);
+    }
+    public void inputTask(String descTask, String status){
+        Task t = new Task(descTask,status);
+        Task.add(t);
     }
     
     public void inputProgrammer(String nama){
@@ -146,6 +135,38 @@ public class Application {
         Manager m = new Manager(nama,divisi,hp);
         Manager.add(m);
         Person.add(m);
+    }
+    public void inputProjectToClient(Client client, String nameProject, String dl){
+        Client c1 = searchClient(client.getNameClient());
+        Project p1 = searchProject(nameProject);
+        if(c1 != null && p1!= null){
+            c1.createProject("Proyek1", "29-11-2019");
+            Project p2 = searchProject(nameProject);
+            Project.add(p2);
+        }
+    }
+    public void inputManagerToProject(Manager manager, Project project){
+        Manager m1 = searchManager(manager.getIdManager());
+        if(m1 == null){
+            project.setManager(manager);
+        }else{
+            System.out.println("Project sudah ada");
+        }
+    }
+    public void inputTaskToProject(Project project,String nameTask,String status){
+        if(project.searchTask(nameTask) == null){
+            project.createTask(nameTask,status);
+        }else{
+            System.out.println("Task sudah ada");
+        }
+    }
+    public void inputProgrammerToProject(Programmer programmer,Project project){
+        Programmer p1 = searchProgrammer(programmer.getIdProgrammer());
+        if(p1 == null){
+            project.addProgrammer(programmer);
+        }else{
+            System.out.println("Programmer sudah ada");
+        }
     }
     
     /* DELETE */
@@ -166,6 +187,20 @@ public class Application {
             System.out.println("Manager Deleted");
         }else{
             System.out.println("Manager not Found");
+        }
+    }
+    
+    public void deleteTask(String namaP,String tugas) {
+        Project p = searchProject(namaP);
+        if (p != null) {
+            Task t1 = p.searchTask(tugas);
+            if (t1 != null) {
+                p.removeTask(t1.getDescTask());
+            } else {
+                System.out.println("Task not Found");
+            }
+        } else {
+            System.out.println("Project not Found");
         }
     }
     
@@ -290,4 +325,8 @@ public class Application {
         }
         return listId;
     }
+//    public {
+//    
+//    }
+
 }

@@ -6,8 +6,8 @@ public class Project {
     private List<Task> listTask;
     private String deadline;
     
-    public Project(Manager manager, String nameP, String dl) {
-        setManager(manager);
+    public Project(String nameP, String dl) {
+        this.listTask = new ArrayList<>();
         setNameProject(nameP);
         this.listProgrammer = new ArrayList<>();
         this.deadline = deadline;
