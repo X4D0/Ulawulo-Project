@@ -67,6 +67,11 @@ public class GUI_Manager extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jButton1.setText("ADD TASK TO PROJECT");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         TaskProgrammerBtn.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         TaskProgrammerBtn.setText("ADD PROGRAMMER TASK");
@@ -244,7 +249,7 @@ public class GUI_Manager extends javax.swing.JFrame {
                             .addComponent(tfTugas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(38, 38, 38)
                         .addComponent(addTaskBtn)))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(412, Short.MAX_VALUE))
         );
 
         panelMain.add(panelTaskProject, "card4");
@@ -262,7 +267,7 @@ public class GUI_Manager extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(468, 468, 468)
-                .addComponent(panelMain, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
+                .addComponent(panelMain, javax.swing.GroupLayout.PREFERRED_SIZE, 425, Short.MAX_VALUE)
                 .addGap(163, 163, 163))
         );
 
@@ -270,6 +275,10 @@ public class GUI_Manager extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
