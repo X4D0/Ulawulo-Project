@@ -1,5 +1,5 @@
 public class Manager extends Person {
-    private int idManager;
+    private String idManager;
     private String nameManager;
     private String divisi;
     private String phoneManager;
@@ -16,7 +16,7 @@ public class Manager extends Person {
         return super.getId();
     }
     
-    public void setIdManager(int idManager){
+    public void setIdManager(String idManager){
         this.idManager = idManager;
     }
 

@@ -1,35 +1,20 @@
 import java.util.*;
 public class Project {
     private Manager manager;
-    
-    private Client client;
     private String nameProject;
-    private Programmer[] listProgrammer;
-    private int numProgrammer = 0;
-    private int maxProgrammer;
-    private Task[] listTask;
-    private int numTask = 0;
+    private List<Programmer> listProgrammer;
+    private List<Task> listTask;
     private String deadline;
-    private String nameClient;
     
-    public Project(Manager manager, String nameProject, int maxProgrammer) {
-        setManager(manager);
-        setNameProject(nameProject);
-        setMaxProgrammer(maxProgrammer);
-        this.listProgrammer = new Programmer[maxProgrammer];
-        setClient(client);
-    }
-    
-    public Project(String nameClient,String nameProject, int maxProgrammer, String deadline){
-        setNameProject(nameProject);
-        this.nameClient = nameClient;
-        setMaxProgrammer(maxProgrammer);
-        this.listProgrammer = new Programmer[maxProgrammer];
+    public Project(String nameP, String dl) {
+        this.listTask = new ArrayList<>();
+        setNameProject(nameP);
+        this.listProgrammer = new ArrayList<>();
         this.deadline = deadline;
     }
-    
-    public Client getClient() {
-        return client;
+
+    public void setDeadline(String deadline) {
+        this.deadline = deadline;
     }
     
     public Manager getManager() {
@@ -40,10 +25,6 @@ public class Project {
         this.manager = manager;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
-    }
-
     public String getNameProject() {
         return nameProject;
     }
@@ -51,64 +32,58 @@ public class Project {
     public void setNameProject(String nameProject) {
         this.nameProject = nameProject;
     }
-
-    public int getNumProgrammer() {
-        return numProgrammer;
-    }
-
-    public void setNumProgrammer(int numProgrammer) {
-        this.numProgrammer = numProgrammer;
-    }
-
-    public int getMaxProgrammer() {
-        return maxProgrammer;
-    }
-
-    public void setMaxProgrammer(int maxProgrammer) {
-        this.maxProgrammer = maxProgrammer;
-    }
     
     public void addProgrammer(Programmer programmer){
-        if(numProgrammer < maxProgrammer){
-            this.listProgrammer[numProgrammer] = programmer;
-            numProgrammer++;
-        }
-    }
-    
-    public void createTask(Task t){
-        if(numTask < maxProgrammer){
-            this.listTask[numTask] = t;
-            numTask++;
-        }
+        listProgrammer.add(programmer);
     }
 
-    public String getNameClient() {
-        return nameClient;
-    }
-
-    public void setNameClient(String nameClient) {
-        this.nameClient = nameClient;
+    public Programmer getProgrammer(int x) {
+        return listProgrammer.get(x);
     }
     
-    public void display(){
-        System.out.println("========= PROJECT : "+getNameProject()+" =========");
-        if(nameClient != null){
-            getNameClient();
-        }else{
-            System.out.println("Client : EMPTY");
-        }
-        if(manager != null){
-            getManager().display();
-        }else{
-            System.out.println("Manager : EMPTY");
-        }
-        
-        if(listProgrammer != null){
-            for (int i = 0; i < getNumProgrammer(); i++) {
-                listProgrammer[i].display();
+    public int sizeProgrammer(){
+        return listProgrammer.size();
+    }
+    
+    public void createTask(String tugas, String status){
+        Task task = new Task(tugas,status);
+        listTask.add(task);
+    }
+    
+    public Task getTask(int x){
+        return listTask.get(x);
+    }
+    public int sizeTask(){
+        return listTask.size();
+    }
+    
+    public Programmer searchProgrammer(String id){
+        int i = 0;
+        while(i<listProgrammer.size()){
+            if(!listProgrammer.get(i).getIdProgrammer().equals(id)){
+                i++;
+            }else{
+                return listProgrammer.get(i);
             }
-        }else{
-            System.out.println("Programmer : EMPTY");
         }
+        return null;
     }
+    
+    public Task searchTask(String tugas){
+        int i = 0;
+        while(i<listTask.size()){
+            if(!listTask.get(i).getDescTask().equals(tugas)){
+                i++;
+            }else{
+                return listTask.get(i);
+            }
+        }
+        return null;
+    }
+    
+    public void removeTask(String tugas){
+        Task t1 = searchTask(tugas);
+        listTask.remove(t1);
+    }
+    
 }

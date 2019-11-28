@@ -3,21 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import java.text.DateFormat;
 import java.util.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 /**
  *
  * @author Rizal MF
  */
 public class Client {
     private String nameClient;
-    private Project[] daftarProject;
-    private Date deadline;
-    private int numProject = 0;
-    private int maxProject;
-
+    List<Project> listProject;
+    DateFormat deadline = new SimpleDateFormat("dd/MM/yyyy");
+    private String dl;
+    
     public Client(String nameClient) {
         setNameClient(nameClient);
-        this.daftarProject = new Project[maxProject];
+        listProject = new ArrayList<>();
+    }
+
+    public void setDl(String dl) {
+        this.dl = dl;
+    }
+
+    public String getDl() {
+        return dl;
     }
     
     public String getNameClient(){
@@ -28,18 +39,30 @@ public class Client {
         this.nameClient = nameClient;
     }
     
-    public void addProject(Project project){
-        Project proyek = new Project(nameClient,nameProject,maxProgrammer,deadline);
-        if(numProject < maxProject){
-            this.daftarProject[numProject] = project;
-            numProject++;
+    public void createProject(String nameP, String deadline){
+        Project project = new Project(nameP,deadline);
+        listProject.add(project);
+    }
+    
+    public Project searchProject(String nameProject){
+        int i = 0;
+        while(i<listProject.size()){
+            if(!listProject.get(i).getNameProject().equals(nameProject)){
+                i++;
+            }else{
+                return listProject.get(i);
+            }
         }
+        return null;
     }
-
-    public Date getDeadline() {
-        return deadline;
+    
+    public void removeProject(String project){
+        Project p1 = searchProject(project);
+        listProject.remove(p1);
     }
-    public void display(){
-        getNameClient();
+    
+    
+    public Project getProject(int x){
+        return listProject.get(x);
     }
 }

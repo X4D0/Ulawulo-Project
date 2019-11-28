@@ -5,6 +5,12 @@ public class Programmer extends Person{
     private String nameProgrammer;
     private static int proId = 1;
 
+    public Programmer(String nameProgrammer) {
+        super(nameProgrammer,"Programmer-"+proId);
+        proId++;
+//        Task = new Task();
+    }
+    
     public Task getTask(){
         return Task;
     }
@@ -24,18 +30,5 @@ public class Programmer extends Person{
     public void setIdProgrammer(String idProgrammer) {
         this.idProgrammer = idProgrammer;
     }
-    
-    public Programmer(String nameProgrammer) {
-        super(nameProgrammer,"Programmer-"+proId);
-        proId++;
-        Task = new Task("TUGAS 1",3,"not done yet");
-    }
-    
-    public void display(){
-        System.out.println("\n\t<<<<PROGRAMMER>>>>");
-        System.out.println("Nama Programmer : "+getNameProgrammer());
-        System.out.println("ID Programmer : "+getIdProgrammer());
-        System.out.println("Tugas : "+getTask());
-        }
     
 }
