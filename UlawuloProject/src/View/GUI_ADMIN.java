@@ -32,6 +32,12 @@ public class GUI_ADMIN extends javax.swing.JFrame {
         HEADER = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         CARDLAYOUT = new javax.swing.JPanel();
+        CreateProject = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        tfNameProj = new javax.swing.JTextField();
+        tfDeadline = new javax.swing.JTextField();
         MenuAdmin = new javax.swing.JPanel();
         btnEdit = new javax.swing.JButton();
         btnView = new javax.swing.JButton();
@@ -43,6 +49,30 @@ public class GUI_ADMIN extends javax.swing.JFrame {
         btnCrtProgrammer = new javax.swing.JButton();
         btnCrtClient = new javax.swing.JButton();
         btnCrtProject = new javax.swing.JButton();
+        View = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        btnViewProj = new javax.swing.JButton();
+        btnViewProg = new javax.swing.JButton();
+        btnViewManager = new javax.swing.JButton();
+        btnViewClient = new javax.swing.JButton();
+        Edit = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        btnEditProj = new javax.swing.JButton();
+        btnEditProg = new javax.swing.JButton();
+        btnEditClient = new javax.swing.JButton();
+        btnEditManager = new javax.swing.JButton();
+        Delete = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        btnDltProj = new javax.swing.JButton();
+        btnDltProg = new javax.swing.JButton();
+        btnDltClient = new javax.swing.JButton();
+        btnDltManager = new javax.swing.JButton();
+        ViewProject = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listProject = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        listOutProj = new javax.swing.JList<>();
         CreateManager = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -59,36 +89,6 @@ public class GUI_ADMIN extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         tfNameClient = new javax.swing.JTextField();
-        CreateProject = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        tfNameProj = new javax.swing.JTextField();
-        tfDeadline = new javax.swing.JTextField();
-        View = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        btnViewProj = new javax.swing.JButton();
-        btnViewProg = new javax.swing.JButton();
-        btnViewManager = new javax.swing.JButton();
-        btnViewClient = new javax.swing.JButton();
-        ViewProject = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        listProject = new javax.swing.JList<>();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        listOutProj = new javax.swing.JList<>();
-        Edit = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        btnEditProj = new javax.swing.JButton();
-        btnEditProg = new javax.swing.JButton();
-        btnEditClient = new javax.swing.JButton();
-        btnEditManager = new javax.swing.JButton();
-        Delete = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        btnDltProj = new javax.swing.JButton();
-        btnDltProg = new javax.swing.JButton();
-        btnDltClient = new javax.swing.JButton();
-        btnDltManager = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,6 +117,59 @@ public class GUI_ADMIN extends javax.swing.JFrame {
         );
 
         CARDLAYOUT.setLayout(new java.awt.CardLayout());
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel14.setText("CREATE PROJECT");
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel15.setText("NAMA PROJECT :");
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel16.setText("DEADLINE         :");
+
+        tfNameProj.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        tfDeadline.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        javax.swing.GroupLayout CreateProjectLayout = new javax.swing.GroupLayout(CreateProject);
+        CreateProject.setLayout(CreateProjectLayout);
+        CreateProjectLayout.setHorizontalGroup(
+            CreateProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CreateProjectLayout.createSequentialGroup()
+                .addGroup(CreateProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CreateProjectLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel15)
+                        .addGap(18, 18, 18)
+                        .addComponent(tfNameProj))
+                    .addGroup(CreateProjectLayout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addComponent(jLabel14)
+                        .addGap(0, 215, Short.MAX_VALUE))
+                    .addGroup(CreateProjectLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel16)
+                        .addGap(18, 18, 18)
+                        .addComponent(tfDeadline)))
+                .addContainerGap())
+        );
+        CreateProjectLayout.setVerticalGroup(
+            CreateProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CreateProjectLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel14)
+                .addGap(18, 18, 18)
+                .addGroup(CreateProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(tfNameProj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(CreateProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(tfDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(323, Short.MAX_VALUE))
+        );
+
+        CARDLAYOUT.add(CreateProject, "card11");
 
         MenuAdmin.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -176,235 +229,22 @@ public class GUI_ADMIN extends javax.swing.JFrame {
 
         btnCrtProject.setText("Create Project");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setText("CREATE MANAGER");
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel7.setText("NAMA MANAGER    :");
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel8.setText("DIVISI                   :");
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel9.setText("NOMOR TELEPON :");
-
-        tfNameManager.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        tfDivisi.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        tfNoTelp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        javax.swing.GroupLayout CreateManagerLayout = new javax.swing.GroupLayout(CreateManager);
-        CreateManager.setLayout(CreateManagerLayout);
-        CreateManagerLayout.setHorizontalGroup(
-            CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CreateManagerLayout.createSequentialGroup()
-                .addGroup(CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CreateManagerLayout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addComponent(jLabel6))
-                    .addGroup(CreateManagerLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(CreateManagerLayout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addGap(20, 20, 20)
-                                .addComponent(tfDivisi, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE))
-                            .addGroup(CreateManagerLayout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(18, 18, 18)
-                                .addComponent(tfNameManager))
-                            .addGroup(CreateManagerLayout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addGap(18, 18, 18)
-                                .addComponent(tfNoTelp, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE)))))
-                .addContainerGap())
-        );
-        CreateManagerLayout.setVerticalGroup(
-            CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CreateManagerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addGap(18, 18, 18)
-                .addGroup(CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(tfNameManager, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(tfDivisi, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(tfNoTelp, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(169, Short.MAX_VALUE))
-        );
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel10.setText("CREATE PROGRAMMER");
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel11.setText("NAMA PROGRAMMER :");
-
-        tfNameProg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        javax.swing.GroupLayout CreateProgrammerLayout = new javax.swing.GroupLayout(CreateProgrammer);
-        CreateProgrammer.setLayout(CreateProgrammerLayout);
-        CreateProgrammerLayout.setHorizontalGroup(
-            CreateProgrammerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CreateProgrammerLayout.createSequentialGroup()
-                .addGroup(CreateProgrammerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CreateProgrammerLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel11)
-                        .addGap(18, 18, 18)
-                        .addComponent(tfNameProg, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(CreateProgrammerLayout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(jLabel10)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        CreateProgrammerLayout.setVerticalGroup(
-            CreateProgrammerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CreateProgrammerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(CreateProgrammerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(tfNameProg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(93, Short.MAX_VALUE))
-        );
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel12.setText("CREATE CLIENT");
-
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel13.setText("NAMA CLIENT :");
-
-        tfNameClient.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        javax.swing.GroupLayout CreateClientLayout = new javax.swing.GroupLayout(CreateClient);
-        CreateClient.setLayout(CreateClientLayout);
-        CreateClientLayout.setHorizontalGroup(
-            CreateClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateClientLayout.createSequentialGroup()
-                .addContainerGap(142, Short.MAX_VALUE)
-                .addComponent(jLabel12)
-                .addGap(139, 139, 139))
-            .addGroup(CreateClientLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel13)
-                .addGap(18, 18, 18)
-                .addComponent(tfNameClient)
-                .addContainerGap())
-        );
-        CreateClientLayout.setVerticalGroup(
-            CreateClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CreateClientLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel12)
-                .addGap(18, 18, 18)
-                .addGroup(CreateClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(tfNameClient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(92, Short.MAX_VALUE))
-        );
-
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel14.setText("CREATE PROJECT");
-
-        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel15.setText("NAMA PROJECT :");
-
-        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel16.setText("DEADLINE         :");
-
-        tfNameProj.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        tfDeadline.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        javax.swing.GroupLayout CreateProjectLayout = new javax.swing.GroupLayout(CreateProject);
-        CreateProject.setLayout(CreateProjectLayout);
-        CreateProjectLayout.setHorizontalGroup(
-            CreateProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CreateProjectLayout.createSequentialGroup()
-                .addGroup(CreateProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CreateProjectLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel15)
-                        .addGap(18, 18, 18)
-                        .addComponent(tfNameProj))
-                    .addGroup(CreateProjectLayout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(jLabel14)
-                        .addGap(0, 119, Short.MAX_VALUE))
-                    .addGroup(CreateProjectLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel16)
-                        .addGap(18, 18, 18)
-                        .addComponent(tfDeadline)))
-                .addContainerGap())
-        );
-        CreateProjectLayout.setVerticalGroup(
-            CreateProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CreateProjectLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel14)
-                .addGap(18, 18, 18)
-                .addGroup(CreateProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(tfNameProj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(CreateProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(tfDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(76, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout CreateLayout = new javax.swing.GroupLayout(Create);
         Create.setLayout(CreateLayout);
         CreateLayout.setHorizontalGroup(
             CreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CreateLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(CreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CreateLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnCrtProgrammer, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE))
-                    .addGroup(CreateLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnCrtClient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(CreateLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnCrtManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(CreateLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnCrtProject, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(btnCrtProgrammer, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
+                    .addComponent(btnCrtClient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCrtManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCrtProject, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(CreateLayout.createSequentialGroup()
                 .addGap(212, 212, 212)
                 .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(CreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(CreateLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(CreateManager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(CreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(CreateLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(CreateProgrammer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(CreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(CreateLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(CreateClient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(CreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(CreateLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(CreateProject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         CreateLayout.setVerticalGroup(
             CreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -419,27 +259,7 @@ public class GUI_ADMIN extends javax.swing.JFrame {
                 .addComponent(btnCrtManager, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCrtClient, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(CreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(CreateLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(CreateManager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(CreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(CreateLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(CreateProgrammer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(CreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(CreateLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(CreateClient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(CreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(CreateLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(CreateProject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
 
         CARDLAYOUT.add(Create, "card4");
@@ -475,42 +295,6 @@ public class GUI_ADMIN extends javax.swing.JFrame {
             }
         });
 
-        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel17.setText("VIEW PROJECT");
-
-        jScrollPane1.setViewportView(listProject);
-
-        jScrollPane2.setViewportView(listOutProj);
-
-        javax.swing.GroupLayout ViewProjectLayout = new javax.swing.GroupLayout(ViewProject);
-        ViewProject.setLayout(ViewProjectLayout);
-        ViewProjectLayout.setHorizontalGroup(
-            ViewProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ViewProjectLayout.createSequentialGroup()
-                .addGroup(ViewProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ViewProjectLayout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(jLabel17)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(ViewProjectLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        ViewProjectLayout.setVerticalGroup(
-            ViewProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ViewProjectLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel17)
-                .addGap(18, 18, 18)
-                .addGroup(ViewProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2))
-                .addContainerGap())
-        );
-
         javax.swing.GroupLayout ViewLayout = new javax.swing.GroupLayout(View);
         View.setLayout(ViewLayout);
         ViewLayout.setHorizontalGroup(
@@ -527,11 +311,6 @@ public class GUI_ADMIN extends javax.swing.JFrame {
                 .addGap(223, 223, 223)
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(ViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(ViewLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(ViewProject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         ViewLayout.setVerticalGroup(
             ViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -547,11 +326,6 @@ public class GUI_ADMIN extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnViewClient, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(ViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(ViewLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(ViewProject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         CARDLAYOUT.add(View, "card5");
@@ -647,6 +421,185 @@ public class GUI_ADMIN extends javax.swing.JFrame {
         );
 
         CARDLAYOUT.add(Delete, "card7");
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel17.setText("VIEW PROJECT");
+
+        jScrollPane1.setViewportView(listProject);
+
+        jScrollPane2.setViewportView(listOutProj);
+
+        javax.swing.GroupLayout ViewProjectLayout = new javax.swing.GroupLayout(ViewProject);
+        ViewProject.setLayout(ViewProjectLayout);
+        ViewProjectLayout.setHorizontalGroup(
+            ViewProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ViewProjectLayout.createSequentialGroup()
+                .addGroup(ViewProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ViewProjectLayout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addComponent(jLabel17)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(ViewProjectLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        ViewProjectLayout.setVerticalGroup(
+            ViewProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ViewProjectLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel17)
+                .addGap(18, 18, 18)
+                .addGroup(ViewProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2))
+                .addContainerGap())
+        );
+
+        CARDLAYOUT.add(ViewProject, "card7");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel6.setText("CREATE MANAGER");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel7.setText("NAMA MANAGER    :");
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel8.setText("DIVISI                   :");
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel9.setText("NOMOR TELEPON :");
+
+        tfNameManager.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        tfDivisi.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        tfNoTelp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        javax.swing.GroupLayout CreateManagerLayout = new javax.swing.GroupLayout(CreateManager);
+        CreateManager.setLayout(CreateManagerLayout);
+        CreateManagerLayout.setHorizontalGroup(
+            CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CreateManagerLayout.createSequentialGroup()
+                .addGroup(CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CreateManagerLayout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(jLabel6))
+                    .addGroup(CreateManagerLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(CreateManagerLayout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(20, 20, 20)
+                                .addComponent(tfDivisi, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE))
+                            .addGroup(CreateManagerLayout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(18, 18, 18)
+                                .addComponent(tfNameManager))
+                            .addGroup(CreateManagerLayout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addGap(18, 18, 18)
+                                .addComponent(tfNoTelp, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE)))))
+                .addContainerGap())
+        );
+        CreateManagerLayout.setVerticalGroup(
+            CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CreateManagerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addGap(18, 18, 18)
+                .addGroup(CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(tfNameManager, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(tfDivisi, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(tfNoTelp, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(169, Short.MAX_VALUE))
+        );
+
+        CARDLAYOUT.add(CreateManager, "card8");
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel10.setText("CREATE PROGRAMMER");
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel11.setText("NAMA PROGRAMMER :");
+
+        tfNameProg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        javax.swing.GroupLayout CreateProgrammerLayout = new javax.swing.GroupLayout(CreateProgrammer);
+        CreateProgrammer.setLayout(CreateProgrammerLayout);
+        CreateProgrammerLayout.setHorizontalGroup(
+            CreateProgrammerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CreateProgrammerLayout.createSequentialGroup()
+                .addGroup(CreateProgrammerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CreateProgrammerLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel11)
+                        .addGap(18, 18, 18)
+                        .addComponent(tfNameProg, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(CreateProgrammerLayout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(jLabel10)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        CreateProgrammerLayout.setVerticalGroup(
+            CreateProgrammerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CreateProgrammerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(CreateProgrammerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(tfNameProg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(93, Short.MAX_VALUE))
+        );
+
+        CARDLAYOUT.add(CreateProgrammer, "card9");
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel12.setText("CREATE CLIENT");
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel13.setText("NAMA CLIENT :");
+
+        tfNameClient.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        javax.swing.GroupLayout CreateClientLayout = new javax.swing.GroupLayout(CreateClient);
+        CreateClient.setLayout(CreateClientLayout);
+        CreateClientLayout.setHorizontalGroup(
+            CreateClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateClientLayout.createSequentialGroup()
+                .addContainerGap(142, Short.MAX_VALUE)
+                .addComponent(jLabel12)
+                .addGap(139, 139, 139))
+            .addGroup(CreateClientLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel13)
+                .addGap(18, 18, 18)
+                .addComponent(tfNameClient)
+                .addContainerGap())
+        );
+        CreateClientLayout.setVerticalGroup(
+            CreateClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CreateClientLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel12)
+                .addGap(18, 18, 18)
+                .addGroup(CreateClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(tfNameClient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(92, Short.MAX_VALUE))
+        );
+
+        CARDLAYOUT.add(CreateClient, "card10");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
