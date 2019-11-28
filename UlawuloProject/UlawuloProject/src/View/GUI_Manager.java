@@ -31,7 +31,7 @@ public class GUI_Manager extends javax.swing.JFrame {
         panelMain = new javax.swing.JPanel();
         Main_Manager = new javax.swing.JPanel();
         addProgrammerBtn = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        TaskToProjectBtn = new javax.swing.JButton();
         TaskProgrammerBtn = new javax.swing.JButton();
         panelAddProg = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -53,6 +53,14 @@ public class GUI_Manager extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         tfTugas = new javax.swing.JTextField();
         addTaskBtn = new javax.swing.JButton();
+        panelTaskProgrammer = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        tfTaskProgrammer = new javax.swing.JTextField();
+        addProgrammerTaskBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -64,14 +72,9 @@ public class GUI_Manager extends javax.swing.JFrame {
         addProgrammerBtn.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         addProgrammerBtn.setText("ADD / REMOVE PROGRAMMER");
 
-        jButton1.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
-        jButton1.setText("ADD TASK TO PROJECT");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        TaskToProjectBtn.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        TaskToProjectBtn.setText("ADD TASK TO PROJECT");
+        TaskToProjectBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         TaskProgrammerBtn.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         TaskProgrammerBtn.setText("ADD PROGRAMMER TASK");
@@ -81,20 +84,20 @@ public class GUI_Manager extends javax.swing.JFrame {
         Main_ManagerLayout.setHorizontalGroup(
             Main_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Main_ManagerLayout.createSequentialGroup()
-                .addGap(160, 160, 160)
+                .addContainerGap(160, Short.MAX_VALUE)
                 .addGroup(Main_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(TaskProgrammerBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(TaskToProjectBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(addProgrammerBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addGap(141, 141, 141))
         );
         Main_ManagerLayout.setVerticalGroup(
             Main_ManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Main_ManagerLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(163, Short.MAX_VALUE)
                 .addComponent(addProgrammerBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TaskToProjectBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(TaskProgrammerBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
@@ -167,7 +170,7 @@ public class GUI_Manager extends javax.swing.JFrame {
         panelAddProgLayout.setVerticalGroup(
             panelAddProgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelAddProgLayout.createSequentialGroup()
-                .addGap(454, 454, 454)
+                .addContainerGap(52, Short.MAX_VALUE)
                 .addGroup(panelAddProgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
@@ -186,8 +189,7 @@ public class GUI_Manager extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addComponent(addProgBtn)))
                 .addGap(18, 18, 18)
-                .addComponent(DeleteProgBtn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(DeleteProgBtn))
         );
 
         panelMain.add(panelAddProg, "card3");
@@ -249,10 +251,81 @@ public class GUI_Manager extends javax.swing.JFrame {
                             .addComponent(tfTugas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(38, 38, 38)
                         .addComponent(addTaskBtn)))
-                .addContainerGap(412, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         panelMain.add(panelTaskProject, "card4");
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane4.setViewportView(jList1);
+
+        jLabel8.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel8.setText("ADD PROGRAMMER TASK");
+
+        jLabel9.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel9.setText("List Programmer");
+
+        jLabel10.setText("Tugas");
+
+        tfTaskProgrammer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfTaskProgrammerActionPerformed(evt);
+            }
+        });
+
+        addProgrammerTaskBtn.setText("ADD TASK");
+
+        javax.swing.GroupLayout panelTaskProgrammerLayout = new javax.swing.GroupLayout(panelTaskProgrammer);
+        panelTaskProgrammer.setLayout(panelTaskProgrammerLayout);
+        panelTaskProgrammerLayout.setHorizontalGroup(
+            panelTaskProgrammerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTaskProgrammerLayout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addGroup(panelTaskProgrammerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelTaskProgrammerLayout.createSequentialGroup()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(panelTaskProgrammerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelTaskProgrammerLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel10)
+                                .addGap(26, 26, 26)
+                                .addComponent(tfTaskProgrammer, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelTaskProgrammerLayout.createSequentialGroup()
+                                .addGap(105, 105, 105)
+                                .addComponent(addProgrammerTaskBtn)))
+                        .addContainerGap(31, Short.MAX_VALUE))
+                    .addGroup(panelTaskProgrammerLayout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel8)
+                        .addGap(84, 84, 84))))
+        );
+        panelTaskProgrammerLayout.setVerticalGroup(
+            panelTaskProgrammerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTaskProgrammerLayout.createSequentialGroup()
+                .addGap(93, 93, 93)
+                .addGroup(panelTaskProgrammerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panelTaskProgrammerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelTaskProgrammerLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelTaskProgrammerLayout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addGroup(panelTaskProgrammerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(tfTaskProgrammer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)
+                        .addComponent(addProgrammerTaskBtn)))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+
+        panelMain.add(panelTaskProgrammer, "card5");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -267,7 +340,7 @@ public class GUI_Manager extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(468, 468, 468)
-                .addComponent(panelMain, javax.swing.GroupLayout.PREFERRED_SIZE, 425, Short.MAX_VALUE)
+                .addComponent(panelMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(163, 163, 163))
         );
 
@@ -276,43 +349,30 @@ public class GUI_Manager extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void tfTaskProgrammerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTaskProgrammerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_tfTaskProgrammerActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUI_Manager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUI_Manager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUI_Manager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUI_Manager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new GUI_Manager().setVisible(true);
-            }
-        });
+    private void addProgBtnActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        panelMain.removeAll();
+        panelMain.add(panelAddProg);
+        panelMain.repaint();
+        panelMain.revalidate();
+    }
+    private void TaskToProjectBtnActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        panelMain.removeAll();
+        panelMain.add(panelTaskProject);
+        panelMain.repaint();
+        panelMain.revalidate();
+    }
+    private void TaskToProgrammerBtnActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        panelMain.removeAll();
+        panelMain.add(panelTaskProgrammer);
+        panelMain.repaint();
+        panelMain.revalidate();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -321,26 +381,34 @@ public class GUI_Manager extends javax.swing.JFrame {
     private javax.swing.JList<String> ListSetProject;
     private javax.swing.JPanel Main_Manager;
     private javax.swing.JButton TaskProgrammerBtn;
+    private javax.swing.JButton TaskToProjectBtn;
     private javax.swing.JButton addProgBtn;
     private javax.swing.JButton addProgrammerBtn;
+    private javax.swing.JButton addProgrammerTaskBtn;
     private javax.swing.JButton addTaskBtn;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JList<String> listSetProject2;
     private javax.swing.JPanel panelAddProg;
     private javax.swing.JPanel panelMain;
+    private javax.swing.JPanel panelTaskProgrammer;
     private javax.swing.JPanel panelTaskProject;
     private javax.swing.JTextField tfNamaProg;
+    private javax.swing.JTextField tfTaskProgrammer;
     private javax.swing.JTextField tfTugas;
     // End of variables declaration//GEN-END:variables
 }

@@ -10,12 +10,12 @@ package View;
  *
  * @author Rizal MF
  */
-public class GUI_ADMIN extends javax.swing.JFrame {
+public class GUI extends javax.swing.JFrame {
 
     /**
      * Creates new form GUI
      */
-    public GUI_ADMIN() {
+    public GUI() {
         initComponents();
     }
 
@@ -28,16 +28,11 @@ public class GUI_ADMIN extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnDltProj1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         HEADER = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         CARDLAYOUT = new javax.swing.JPanel();
-        CreateProject = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        tfNameProj = new javax.swing.JTextField();
-        tfDeadline = new javax.swing.JTextField();
         MenuAdmin = new javax.swing.JPanel();
         btnEdit = new javax.swing.JButton();
         btnView = new javax.swing.JButton();
@@ -67,28 +62,8 @@ public class GUI_ADMIN extends javax.swing.JFrame {
         btnDltProg = new javax.swing.JButton();
         btnDltClient = new javax.swing.JButton();
         btnDltManager = new javax.swing.JButton();
-        ViewProject = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        listProject = new javax.swing.JList<>();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        listOutProj = new javax.swing.JList<>();
-        CreateManager = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        tfNameManager = new javax.swing.JTextField();
-        tfDivisi = new javax.swing.JTextField();
-        tfNoTelp = new javax.swing.JTextField();
-        CreateProgrammer = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        tfNameProg = new javax.swing.JTextField();
-        CreateClient = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        tfNameClient = new javax.swing.JTextField();
+
+        btnDltProj1.setText("Delete Project");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,59 +92,6 @@ public class GUI_ADMIN extends javax.swing.JFrame {
         );
 
         CARDLAYOUT.setLayout(new java.awt.CardLayout());
-
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel14.setText("CREATE PROJECT");
-
-        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel15.setText("NAMA PROJECT :");
-
-        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel16.setText("DEADLINE         :");
-
-        tfNameProj.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        tfDeadline.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        javax.swing.GroupLayout CreateProjectLayout = new javax.swing.GroupLayout(CreateProject);
-        CreateProject.setLayout(CreateProjectLayout);
-        CreateProjectLayout.setHorizontalGroup(
-            CreateProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CreateProjectLayout.createSequentialGroup()
-                .addGroup(CreateProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CreateProjectLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel15)
-                        .addGap(18, 18, 18)
-                        .addComponent(tfNameProj))
-                    .addGroup(CreateProjectLayout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(jLabel14)
-                        .addGap(0, 215, Short.MAX_VALUE))
-                    .addGroup(CreateProjectLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel16)
-                        .addGap(18, 18, 18)
-                        .addComponent(tfDeadline)))
-                .addContainerGap())
-        );
-        CreateProjectLayout.setVerticalGroup(
-            CreateProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CreateProjectLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel14)
-                .addGap(18, 18, 18)
-                .addGroup(CreateProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(tfNameProj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(CreateProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(tfDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(323, Short.MAX_VALUE))
-        );
-
-        CARDLAYOUT.add(CreateProject, "card11");
 
         MenuAdmin.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -234,12 +156,19 @@ public class GUI_ADMIN extends javax.swing.JFrame {
         CreateLayout.setHorizontalGroup(
             CreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CreateLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(CreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCrtProgrammer, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
-                    .addComponent(btnCrtClient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCrtManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCrtProject, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(CreateLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnCrtProgrammer, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE))
+                    .addGroup(CreateLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnCrtClient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(CreateLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnCrtManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(CreateLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnCrtProject, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(CreateLayout.createSequentialGroup()
                 .addGap(212, 212, 212)
@@ -259,7 +188,7 @@ public class GUI_ADMIN extends javax.swing.JFrame {
                 .addComponent(btnCrtManager, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnCrtClient, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         CARDLAYOUT.add(Create, "card4");
@@ -422,185 +351,6 @@ public class GUI_ADMIN extends javax.swing.JFrame {
 
         CARDLAYOUT.add(Delete, "card7");
 
-        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel17.setText("VIEW PROJECT");
-
-        jScrollPane1.setViewportView(listProject);
-
-        jScrollPane2.setViewportView(listOutProj);
-
-        javax.swing.GroupLayout ViewProjectLayout = new javax.swing.GroupLayout(ViewProject);
-        ViewProject.setLayout(ViewProjectLayout);
-        ViewProjectLayout.setHorizontalGroup(
-            ViewProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ViewProjectLayout.createSequentialGroup()
-                .addGroup(ViewProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ViewProjectLayout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(jLabel17)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(ViewProjectLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        ViewProjectLayout.setVerticalGroup(
-            ViewProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ViewProjectLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel17)
-                .addGap(18, 18, 18)
-                .addGroup(ViewProjectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2))
-                .addContainerGap())
-        );
-
-        CARDLAYOUT.add(ViewProject, "card7");
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setText("CREATE MANAGER");
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel7.setText("NAMA MANAGER    :");
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel8.setText("DIVISI                   :");
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel9.setText("NOMOR TELEPON :");
-
-        tfNameManager.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        tfDivisi.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        tfNoTelp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        javax.swing.GroupLayout CreateManagerLayout = new javax.swing.GroupLayout(CreateManager);
-        CreateManager.setLayout(CreateManagerLayout);
-        CreateManagerLayout.setHorizontalGroup(
-            CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CreateManagerLayout.createSequentialGroup()
-                .addGroup(CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CreateManagerLayout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addComponent(jLabel6))
-                    .addGroup(CreateManagerLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(CreateManagerLayout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addGap(20, 20, 20)
-                                .addComponent(tfDivisi, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE))
-                            .addGroup(CreateManagerLayout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(18, 18, 18)
-                                .addComponent(tfNameManager))
-                            .addGroup(CreateManagerLayout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addGap(18, 18, 18)
-                                .addComponent(tfNoTelp, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE)))))
-                .addContainerGap())
-        );
-        CreateManagerLayout.setVerticalGroup(
-            CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CreateManagerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addGap(18, 18, 18)
-                .addGroup(CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(tfNameManager, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(tfDivisi, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(CreateManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(tfNoTelp, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(169, Short.MAX_VALUE))
-        );
-
-        CARDLAYOUT.add(CreateManager, "card8");
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel10.setText("CREATE PROGRAMMER");
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel11.setText("NAMA PROGRAMMER :");
-
-        tfNameProg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        javax.swing.GroupLayout CreateProgrammerLayout = new javax.swing.GroupLayout(CreateProgrammer);
-        CreateProgrammer.setLayout(CreateProgrammerLayout);
-        CreateProgrammerLayout.setHorizontalGroup(
-            CreateProgrammerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CreateProgrammerLayout.createSequentialGroup()
-                .addGroup(CreateProgrammerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CreateProgrammerLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel11)
-                        .addGap(18, 18, 18)
-                        .addComponent(tfNameProg, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(CreateProgrammerLayout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(jLabel10)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        CreateProgrammerLayout.setVerticalGroup(
-            CreateProgrammerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CreateProgrammerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(CreateProgrammerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(tfNameProg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(93, Short.MAX_VALUE))
-        );
-
-        CARDLAYOUT.add(CreateProgrammer, "card9");
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel12.setText("CREATE CLIENT");
-
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel13.setText("NAMA CLIENT :");
-
-        tfNameClient.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        javax.swing.GroupLayout CreateClientLayout = new javax.swing.GroupLayout(CreateClient);
-        CreateClient.setLayout(CreateClientLayout);
-        CreateClientLayout.setHorizontalGroup(
-            CreateClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateClientLayout.createSequentialGroup()
-                .addContainerGap(142, Short.MAX_VALUE)
-                .addComponent(jLabel12)
-                .addGap(139, 139, 139))
-            .addGroup(CreateClientLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel13)
-                .addGap(18, 18, 18)
-                .addComponent(tfNameClient)
-                .addContainerGap())
-        );
-        CreateClientLayout.setVerticalGroup(
-            CreateClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(CreateClientLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel12)
-                .addGap(18, 18, 18)
-                .addGroup(CreateClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(tfNameClient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(92, Short.MAX_VALUE))
-        );
-
-        CARDLAYOUT.add(CreateClient, "card10");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -679,21 +429,20 @@ public class GUI_ADMIN extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUI_ADMIN.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUI_ADMIN.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUI_ADMIN.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUI_ADMIN.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUI_ADMIN().setVisible(true);
+                new GUI().setVisible(true);
             }
         });
     }
@@ -701,16 +450,11 @@ public class GUI_ADMIN extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CARDLAYOUT;
     private javax.swing.JPanel Create;
-    private javax.swing.JPanel CreateClient;
-    private javax.swing.JPanel CreateManager;
-    private javax.swing.JPanel CreateProgrammer;
-    private javax.swing.JPanel CreateProject;
     private javax.swing.JPanel Delete;
     private javax.swing.JPanel Edit;
     private javax.swing.JPanel HEADER;
     private javax.swing.JPanel MenuAdmin;
     private javax.swing.JPanel View;
-    private javax.swing.JPanel ViewProject;
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnCrtClient;
     private javax.swing.JButton btnCrtManager;
@@ -721,6 +465,7 @@ public class GUI_ADMIN extends javax.swing.JFrame {
     private javax.swing.JButton btnDltManager;
     private javax.swing.JButton btnDltProg;
     private javax.swing.JButton btnDltProj;
+    private javax.swing.JButton btnDltProj1;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnEditClient;
     private javax.swing.JButton btnEditManager;
@@ -732,33 +477,10 @@ public class GUI_ADMIN extends javax.swing.JFrame {
     private javax.swing.JButton btnViewProg;
     private javax.swing.JButton btnViewProj;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JList<String> listOutProj;
-    private javax.swing.JList<String> listProject;
-    private javax.swing.JTextField tfDeadline;
-    private javax.swing.JTextField tfDivisi;
-    private javax.swing.JTextField tfNameClient;
-    private javax.swing.JTextField tfNameManager;
-    private javax.swing.JTextField tfNameProg;
-    private javax.swing.JTextField tfNameProj;
-    private javax.swing.JTextField tfNoTelp;
     // End of variables declaration//GEN-END:variables
 }
